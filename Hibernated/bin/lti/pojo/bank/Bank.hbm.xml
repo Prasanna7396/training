@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="lti.pojo">
+
+	<class name="Account" table="account">
+		<id name="AccountId" column="Account_id"></id>
+			<property name="Holder" column="holder_name" length="30" />
+			<property name="Balance" column="Balance" />
+			
+			<one-to-many class="transaction" />
+			
+			
+			<class name="Transaction" table="Transaction">
+		
+			<property name="Holder" column="holder_name" length="30" />
+			<property name="Balance" column="Balance" />
+			
+			
+		
+		
+		
